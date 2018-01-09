@@ -105,3 +105,4 @@ ENV/
 # database
 database/
 train_package/
+secret.txt
