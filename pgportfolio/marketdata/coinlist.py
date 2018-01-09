@@ -19,13 +19,14 @@ class CoinList(object):
         coins = []
         volumes = []
         prices = []
-
         logging.info("select coin online from %s to %s" % (datetime.fromtimestamp(end-(DAY*volume_average_days)-
                                                                                   volume_forward).
                                                            strftime('%Y-%m-%d %H:%M'),
                                                            datetime.fromtimestamp(end-volume_forward).
                                                            strftime('%Y-%m-%d %H:%M')))
         for k, v in vol.items():
+            if k not in ['BTC_ETH','USDT_BTC','BTC_LTC','BTC_BCH','BTC_DASH','BTC_ETC']:
+                continue
             if k.startswith("BTC_") or k.endswith("_BTC"):
                 pairs.append(k)
                 for c, val in v.items():
