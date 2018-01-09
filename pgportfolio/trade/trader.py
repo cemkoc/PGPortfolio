@@ -96,6 +96,7 @@ class Trader:
         if not self.__class__.__name__=="BackTest":
             self._last_omega = omega.copy()
         logging.info('total assets are %3f BTC' % self._total_capital)
+        logging.info('portfoloio weights are {}'.format(omega))        
         logging.debug("="*30)
         trading_time = time.time() - starttime
         if trading_time < self._period:
