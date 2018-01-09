@@ -130,7 +130,7 @@ class HistoryManager:
             try:
                 cursor=connection.cursor()
                 cursor.execute('SELECT coin,SUM(volume) AS total_volume FROM History WHERE'
-                               ' date>=? and date<=? GROUP BY coin'
+                               ' date>=? and date<=? and coin in ('ETH','reversed_USDT','LTC','BCH','DASH','ETC') GROUP BY coin'
                                ' ORDER BY total_volume DESC LIMIT ?;',
                                (int(start), int(end), self._coin_number))
                 coins_tuples = cursor.fetchall()
