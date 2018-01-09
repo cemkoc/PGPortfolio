@@ -105,4 +105,5 @@ ENV/
 # database
 database/
 train_package/
+# API Keys
 secrets.txt
