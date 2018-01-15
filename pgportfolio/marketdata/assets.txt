@@ -1,0 +1,2 @@
+['ETH','reversed_USDT','LTC','BCH','DASH','ETC']
+
